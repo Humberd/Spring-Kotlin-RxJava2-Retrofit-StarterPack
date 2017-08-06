@@ -12,6 +12,7 @@ class GooglePlayBotApplication
 fun main(args: Array<String>) {
     SpringApplication.run(GooglePlayBotApplication::class.java, *args)
 
+
     val retrofit = Retrofit.Builder()
             .baseUrl("https://jsonplaceholder.typicode.com/")
             .addCallAdapterFactory(RxJava2CallAdapterFactory.create())
@@ -20,6 +21,6 @@ fun main(args: Array<String>) {
 
     val service = retrofit.create(Google::class.java)
 
-    service.postPage(MockResponse("dupa"))
+    service.postPage(MockResponse("foobar"))
             .blockingSubscribe { println(it) }
 }
