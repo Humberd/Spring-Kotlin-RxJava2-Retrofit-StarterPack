@@ -5,7 +5,7 @@ import retrofit2.http.Body
 import retrofit2.http.GET
 import retrofit2.http.POST
 
-interface Google {
+interface RequestMockInterf {
     @GET("/posts/1")
     fun getPage(): Observable<MockResponse>
 

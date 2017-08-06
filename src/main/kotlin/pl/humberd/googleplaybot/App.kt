@@ -7,10 +7,10 @@ import retrofit2.adapter.rxjava2.RxJava2CallAdapterFactory
 import retrofit2.converter.gson.GsonConverterFactory
 
 @SpringBootApplication
-class GooglePlayBotApplication
+class App
 
 fun main(args: Array<String>) {
-    SpringApplication.run(GooglePlayBotApplication::class.java, *args)
+    SpringApplication.run(App::class.java, *args)
 
 
     val retrofit = Retrofit.Builder()
@@ -19,7 +19,7 @@ fun main(args: Array<String>) {
             .addConverterFactory(GsonConverterFactory.create())
             .build()
 
-    val service = retrofit.create(Google::class.java)
+    val service = retrofit.create(RequestMockInterf::class.java)
 
     service.postPage(MockResponse("foobar"))
             .blockingSubscribe { println(it) }
