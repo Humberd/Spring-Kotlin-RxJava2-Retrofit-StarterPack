@@ -25,8 +25,10 @@
         <java.version>1.8</java.version>
         <kotlin.version>1.1.3-2</kotlin.version>
         <javarx.version>2.1.2</javarx.version>
+        <javarx-kotlin.version>2.1.0</javarx-kotlin.version>
         <retrofit.version>2.3.0</retrofit.version>
         <kotlin-logging.version>1.4.6</kotlin-logging.version>
+        <gson.version>2.8.1</gson.version>
     </properties>
 
     <dependencies>
@@ -44,16 +46,39 @@
             <artifactId>kotlin-reflect</artifactId>
             <version>${kotlin.version}</version>
         </dependency>
+        <!--<dependency>-->
+            <!--<groupId>io.reactivex.rxjava2</groupId>-->
+            <!--<artifactId>rxjava</artifactId>-->
+            <!--<version>${javarx.version}</version>-->
+        <!--</dependency>-->
         <dependency>
             <groupId>io.reactivex.rxjava2</groupId>
-            <artifactId>rxjava</artifactId>
-            <version>${javarx.version}</version>
+            <artifactId>rxkotlin</artifactId>
+            <version>${javarx-kotlin.version}</version>
         </dependency>
         <dependency>
             <groupId>com.squareup.retrofit2</groupId>
             <artifactId>retrofit</artifactId>
             <version>${retrofit.version}</version>
         </dependency>
+        <dependency>
+            <groupId>com.squareup.retrofit2</groupId>
+            <artifactId>adapter-rxjava2</artifactId>
+            <version>${retrofit.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>com.squareup.retrofit2</groupId>
+            <artifactId>converter-gson</artifactId>
+            <version>${retrofit.version}</version>
+        </dependency>
+
+        <dependency>
+            <groupId>com.google.code.gson</groupId>
+            <artifactId>gson</artifactId>
+            <version>${gson.version}</version>
+        </dependency>
+
+
         <dependency>
             <groupId>io.github.microutils</groupId>
             <artifactId>kotlin-logging</artifactId>
